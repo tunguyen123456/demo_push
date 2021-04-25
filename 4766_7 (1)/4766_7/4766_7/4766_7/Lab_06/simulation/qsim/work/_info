@@ -1,0 +1,165 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\LENOVO\Desktop\4766_7\Lab_06\simulation\qsim
+vLab_06
+Z1 IF3b]Qez>m?:zcP7ekGKe@3
+Z2 V]BSQOV_og;H<CjLNH]^DP1
+Z3 dC:\Users\LENOVO\Desktop\4766_7\Lab_06\simulation\qsim
+Z4 w1592897378
+Z5 8Lab_06.vo
+Z6 FLab_06.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|Lab_06.vo|
+Z9 o-work work -O0
+Z10 n@lab_06
+Z11 !s100 1@Q?DTBTQd<o06gkWia:H2
+Z12 !s108 1592897379.392000
+Z13 !s107 Lab_06.vo|
+!i10b 1
+!s85 0
+!s101 -O0
+vLab_06_KhongCuBo
+Z14 IGgdSTOiYN6K]4hRFQ?EY03
+Z15 VW[5EDQSXS:5PIY:I=ZDSn3
+R3
+Z16 w1592901568
+R5
+R6
+L0 31
+R7
+r1
+31
+R8
+R9
+Z17 n@lab_06_@khong@cu@bo
+!i10b 1
+Z18 !s100 WQf@cEdUSnWK2oHIo@oWM2
+!s85 0
+Z19 !s108 1592901570.381000
+R13
+!s101 -O0
+vLab_06_KhongCuBo_vlg_check_tst
+!i10b 1
+!s100 Zd[hz2P68NQO`eP=CJ@TU1
+I:XeFNcgOdgfl@J84O>Y3h3
+V5Q`DMY<CeIk>9?9FN1=Pe0
+R3
+Z20 w1592901566
+Z21 8Lab_06.vt
+Z22 FLab_06.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z23 !s108 1592901570.679000
+Z24 !s107 Lab_06.vt|
+Z25 !s90 -work|work|Lab_06.vt|
+!s101 -O0
+R9
+n@lab_06_@khong@cu@bo_vlg_check_tst
+vLab_06_KhongCuBo_vlg_sample_tst
+!i10b 1
+!s100 Lj?[ajKTd4;1JZ_3Kz`aH2
+IEkgEM>;GGg7Z2MY=K71z62
+VH1I^9iZ]L0D7CA_[FHzz]1
+R3
+R20
+R21
+R22
+L0 29
+R7
+r1
+!s85 0
+31
+R23
+R24
+R25
+!s101 -O0
+R9
+n@lab_06_@khong@cu@bo_vlg_sample_tst
+vLab_06_KhongCuBo_vlg_vec_tst
+!i10b 1
+!s100 H:NYI;4V?_^@Z?[KfR96j2
+IEXYLNTg4;fS8NMDVj_;kC3
+V>f10zOOKzbFdV4zoZE^eM1
+R3
+R20
+R21
+R22
+L0 229
+R7
+r1
+!s85 0
+31
+R23
+R24
+R25
+!s101 -O0
+R9
+n@lab_06_@khong@cu@bo_vlg_vec_tst
+vLab_06_vlg_check_tst
+Z26 !s100 a1N0z5KT8[JbTOV1^JfbK0
+Z27 I:M5;U38jEB1MI`KbQ]Z`o0
+Z28 VKb]53Ub];3RPn5]n`K;:K1
+R3
+R4
+R21
+R22
+L0 61
+R7
+r1
+31
+Z29 !s108 1592897379.578000
+Z30 !s107 Lab_06.vt|
+R25
+R9
+Z31 n@lab_06_vlg_check_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vLab_06_vlg_sample_tst
+Z32 !s100 4O3F@1SDim=V7i_dJf8NM3
+Z33 IB=G65j=<ag3:Hh;VEKToX3
+Z34 V5@^TQ0=Oo5Zhn?6f^9cCf2
+R3
+R4
+R21
+R22
+L0 29
+R7
+r1
+31
+R29
+R30
+R25
+R9
+Z35 n@lab_06_vlg_sample_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vLab_06_vlg_vec_tst
+Z36 IJlh[HSZ2]mF=WZ2FYk[C32
+Z37 Vdo6MbBDj[ENjDCZ:4dWdJ2
+R3
+R4
+R21
+R22
+Z38 L0 209
+R7
+r1
+31
+R29
+R30
+R25
+R9
+Z39 n@lab_06_vlg_vec_tst
+Z40 !s100 1PTG2eS<J1jj8X_iao0j?2
+!i10b 1
+!s85 0
+!s101 -O0
