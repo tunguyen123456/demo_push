@@ -1,0 +1,509 @@
+|ShiftRegister8BIT
+OUT[0] <= ShiftRegister:inst.OUT[0]
+OUT[1] <= ShiftRegister:inst.OUT[1]
+OUT[2] <= ShiftRegister:inst.OUT[2]
+OUT[3] <= ShiftRegister:inst.OUT[3]
+OUT[4] <= ShiftRegister:inst.OUT[4]
+OUT[5] <= ShiftRegister:inst.OUT[5]
+OUT[6] <= ShiftRegister:inst.OUT[6]
+OUT[7] <= ShiftRegister:inst.OUT[7]
+LEFT => ShiftRegister:inst.LEFT
+RIGHT => ShiftRegister:inst.RIGHT
+CLOCK => ShiftRegister:inst.CLOCK
+IN[0] => ShiftRegister:inst.IN[0]
+IN[1] => ShiftRegister:inst.IN[1]
+IN[2] => ShiftRegister:inst.IN[2]
+IN[3] => ShiftRegister:inst.IN[3]
+IN[4] => ShiftRegister:inst.IN[4]
+IN[5] => ShiftRegister:inst.IN[5]
+IN[6] => ShiftRegister:inst.IN[6]
+IN[7] => ShiftRegister:inst.IN[7]
+S[0] => ShiftRegister:inst.S[0]
+S[1] => ShiftRegister:inst.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst
+OUT[0] <= ShiftRegister4BIT:inst4.OUTPUT[0]
+OUT[1] <= ShiftRegister4BIT:inst4.OUTPUT[1]
+OUT[2] <= ShiftRegister4BIT:inst4.OUTPUT[2]
+OUT[3] <= ShiftRegister4BIT:inst4.OUTPUT[3]
+OUT[4] <= ShiftRegister4BIT:inst.OUTPUT[0]
+OUT[5] <= ShiftRegister4BIT:inst.OUTPUT[1]
+OUT[6] <= ShiftRegister4BIT:inst.OUTPUT[2]
+OUT[7] <= ShiftRegister4BIT:inst.OUTPUT[3]
+LEFT => ShiftRegister4BIT:inst.LEFT
+CLOCK => ShiftRegister4BIT:inst.CLOCK
+CLOCK => ShiftRegister4BIT:inst4.CLOCK
+IN[0] => ShiftRegister4BIT:inst4.IN[0]
+IN[1] => ShiftRegister4BIT:inst4.IN[1]
+IN[2] => ShiftRegister4BIT:inst4.IN[2]
+IN[3] => ShiftRegister4BIT:inst4.IN[3]
+IN[4] => ShiftRegister4BIT:inst.IN[0]
+IN[5] => ShiftRegister4BIT:inst.IN[1]
+IN[6] => ShiftRegister4BIT:inst.IN[2]
+IN[7] => ShiftRegister4BIT:inst.IN[3]
+S[0] => ShiftRegister4BIT:inst.S[0]
+S[0] => ShiftRegister4BIT:inst4.S[0]
+S[1] => ShiftRegister4BIT:inst.S[1]
+S[1] => ShiftRegister4BIT:inst4.S[1]
+RIGHT => ShiftRegister4BIT:inst4.RIGHT
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst
+OUTPUT[0] <= ShiftRegister2BIT:inst2.OUT[0]
+OUTPUT[1] <= ShiftRegister2BIT:inst2.OUT[1]
+OUTPUT[2] <= ShiftRegister2BIT:inst.OUT[0]
+OUTPUT[3] <= ShiftRegister2BIT:inst.OUT[1]
+LEFT => ShiftRegister2BIT:inst.LEFT
+CLOCK => ShiftRegister2BIT:inst.CLOCK
+CLOCK => ShiftRegister2BIT:inst2.CLOCK
+IN[0] => ShiftRegister2BIT:inst2.IN[0]
+IN[1] => ShiftRegister2BIT:inst2.IN[1]
+IN[2] => ShiftRegister2BIT:inst.IN[0]
+IN[3] => ShiftRegister2BIT:inst.IN[1]
+S[0] => ShiftRegister2BIT:inst.S[0]
+S[0] => ShiftRegister2BIT:inst2.S[0]
+S[1] => ShiftRegister2BIT:inst.S[1]
+S[1] => ShiftRegister2BIT:inst2.S[1]
+RIGHT => ShiftRegister2BIT:inst2.RIGHT
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst
+OUT[0] <= ShiftRegister1BIT:inst3.OUT
+OUT[1] <= ShiftRegister1BIT:inst.OUT
+IN[0] => ShiftRegister1BIT:inst3.INPUT
+IN[1] => ShiftRegister1BIT:inst.INPUT
+RIGHT => ShiftRegister1BIT:inst3.RIGHT
+CLOCK => ShiftRegister1BIT:inst3.CLOCK
+CLOCK => ShiftRegister1BIT:inst.CLOCK
+S[0] => ShiftRegister1BIT:inst3.S[0]
+S[0] => ShiftRegister1BIT:inst.S[0]
+S[1] => ShiftRegister1BIT:inst3.S[1]
+S[1] => ShiftRegister1BIT:inst.S[1]
+LEFT => ShiftRegister1BIT:inst.LEFT
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2
+OUT[0] <= ShiftRegister1BIT:inst3.OUT
+OUT[1] <= ShiftRegister1BIT:inst.OUT
+IN[0] => ShiftRegister1BIT:inst3.INPUT
+IN[1] => ShiftRegister1BIT:inst.INPUT
+RIGHT => ShiftRegister1BIT:inst3.RIGHT
+CLOCK => ShiftRegister1BIT:inst3.CLOCK
+CLOCK => ShiftRegister1BIT:inst.CLOCK
+S[0] => ShiftRegister1BIT:inst3.S[0]
+S[0] => ShiftRegister1BIT:inst.S[0]
+S[1] => ShiftRegister1BIT:inst3.S[1]
+S[1] => ShiftRegister1BIT:inst.S[1]
+LEFT => ShiftRegister1BIT:inst.LEFT
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4
+OUTPUT[0] <= ShiftRegister2BIT:inst2.OUT[0]
+OUTPUT[1] <= ShiftRegister2BIT:inst2.OUT[1]
+OUTPUT[2] <= ShiftRegister2BIT:inst.OUT[0]
+OUTPUT[3] <= ShiftRegister2BIT:inst.OUT[1]
+LEFT => ShiftRegister2BIT:inst.LEFT
+CLOCK => ShiftRegister2BIT:inst.CLOCK
+CLOCK => ShiftRegister2BIT:inst2.CLOCK
+IN[0] => ShiftRegister2BIT:inst2.IN[0]
+IN[1] => ShiftRegister2BIT:inst2.IN[1]
+IN[2] => ShiftRegister2BIT:inst.IN[0]
+IN[3] => ShiftRegister2BIT:inst.IN[1]
+S[0] => ShiftRegister2BIT:inst.S[0]
+S[0] => ShiftRegister2BIT:inst2.S[0]
+S[1] => ShiftRegister2BIT:inst.S[1]
+S[1] => ShiftRegister2BIT:inst2.S[1]
+RIGHT => ShiftRegister2BIT:inst2.RIGHT
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst
+OUT[0] <= ShiftRegister1BIT:inst3.OUT
+OUT[1] <= ShiftRegister1BIT:inst.OUT
+IN[0] => ShiftRegister1BIT:inst3.INPUT
+IN[1] => ShiftRegister1BIT:inst.INPUT
+RIGHT => ShiftRegister1BIT:inst3.RIGHT
+CLOCK => ShiftRegister1BIT:inst3.CLOCK
+CLOCK => ShiftRegister1BIT:inst.CLOCK
+S[0] => ShiftRegister1BIT:inst3.S[0]
+S[0] => ShiftRegister1BIT:inst.S[0]
+S[1] => ShiftRegister1BIT:inst3.S[1]
+S[1] => ShiftRegister1BIT:inst.S[1]
+LEFT => ShiftRegister1BIT:inst.LEFT
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2
+OUT[0] <= ShiftRegister1BIT:inst3.OUT
+OUT[1] <= ShiftRegister1BIT:inst.OUT
+IN[0] => ShiftRegister1BIT:inst3.INPUT
+IN[1] => ShiftRegister1BIT:inst.INPUT
+RIGHT => ShiftRegister1BIT:inst3.RIGHT
+CLOCK => ShiftRegister1BIT:inst3.CLOCK
+CLOCK => ShiftRegister1BIT:inst.CLOCK
+S[0] => ShiftRegister1BIT:inst3.S[0]
+S[0] => ShiftRegister1BIT:inst.S[0]
+S[1] => ShiftRegister1BIT:inst3.S[1]
+S[1] => ShiftRegister1BIT:inst.S[1]
+LEFT => ShiftRegister1BIT:inst.LEFT
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst3|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst.CLK
+INPUT => MUX2BIT:inst2.IN1
+RIGHT => MUX2BIT:inst2.IN2
+LEFT => MUX2BIT:inst2.IN3
+S[0] => MUX2BIT:inst2.S[0]
+S[1] => MUX2BIT:inst2.S[1]
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2
+OUTPUT <= MUX1BIT:inst6.pin_name1
+IN0 => MUX1BIT:inst.A
+IN1 => MUX1BIT:inst.B
+S[0] => MUX1BIT:inst.S
+S[0] => MUX1BIT:inst5.S
+S[1] => MUX1BIT:inst6.S
+IN2 => MUX1BIT:inst5.A
+IN3 => MUX1BIT:inst5.B
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst6
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+
+|ShiftRegister8BIT|ShiftRegister:inst|ShiftRegister4BIT:inst4|ShiftRegister2BIT:inst2|ShiftRegister1BIT:inst|MUX2BIT:inst2|MUX1BIT:inst5
+pin_name1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+S => inst1.IN1
+S => inst2.IN0
+A => inst.IN0
+
+

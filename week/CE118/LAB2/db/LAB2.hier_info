@@ -1,0 +1,49 @@
+|Mealy
+OUT <= Mealy-Decode:inst.OUT
+IN[0] => Mealy-Decode:inst.IN[0]
+IN[0] => NextStateConverterMealy:inst4.IN[0]
+IN[1] => Mealy-Decode:inst.IN[1]
+IN[1] => NextStateConverterMealy:inst4.IN[1]
+IN[2] => Mealy-Decode:inst.IN[2]
+IN[2] => NextStateConverterMealy:inst4.IN[2]
+IN[3] => Mealy-Decode:inst.IN[3]
+IN[3] => NextStateConverterMealy:inst4.IN[3]
+CLOCK => Mealy_RegisterBlock:inst2.CLOCK
+
+
+|Mealy|Mealy-Decode:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+IN[0] => inst.IN3
+IN[1] => inst4.IN0
+IN[2] => inst2.IN0
+IN[3] => inst3.IN0
+Q[0] => inst5.IN0
+Q[1] => inst.IN4
+
+
+|Mealy|Mealy_RegisterBlock:inst2
+OUT[0] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+IN[0] => inst2.DATAIN
+IN[1] => inst1.DATAIN
+
+
+|Mealy|NextStateConverterMealy:inst4
+D[0] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+IN[0] => inst7.IN0
+IN[0] => inst.IN3
+IN[1] => inst3.IN0
+IN[1] => inst11.IN2
+IN[2] => inst5.IN1
+IN[2] => inst2.IN0
+IN[3] => inst6.IN0
+IN[3] => inst.IN0
+Q[0] => inst8.IN2
+Q[0] => inst4.IN2
+Q[1] => inst9.IN0
+Q[1] => inst4.IN1
+
+

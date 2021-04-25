@@ -1,0 +1,38 @@
+|Check111
+pin_name1 <= DECODE:inst7.pin_name2
+RESET => REGISTER:inst5.RESET
+CLK => REGISTER:inst5.CLK
+INPUT => CONVERT:inst.IN
+
+
+|Check111|DECODE:inst7
+pin_name2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] => inst6.IN0
+Q[1] => inst3.IN0
+
+
+|Check111|REGISTER:inst5
+Q[0] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+RESET => inst2.IN0
+K[0] => inst1~1.IN0
+K[1] => inst~1.IN0
+J[0] => inst1~0.IN1
+J[1] => inst~0.IN1
+CLK => inst.CLK
+CLK => inst1.CLK
+
+
+|Check111|CONVERT:inst
+J[0] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+J[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+IN => inst.IN0
+IN => inst3.IN0
+IN => inst5.IN0
+Q[0] => inst.IN1
+Q[1] => inst2.IN0
+Q[1] => inst5.IN1
+K[0] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+K[1] <= <GND>
+
+
